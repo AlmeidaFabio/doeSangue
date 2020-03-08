@@ -1,9 +1,10 @@
+require('dotenv').config()
 const express = require('express')
 const server = express()
 const mongoose = require('mongoose')
 
 
-mongoose.connect('mongodb://127.0.0.1:27017/doeSangue', {
+mongoose.connect(process.env.MONGO_URL, {
     useCreateIndex: true,
     useNewUrlParser:true,
     useUnifiedTopology: true
@@ -39,4 +40,4 @@ server.post('/', async function(req, res){
     return res.redirect('/')
 })
 
-server.listen(3000)
+server.listen(process.env.PORT || 3000)
