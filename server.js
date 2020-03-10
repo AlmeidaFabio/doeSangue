@@ -4,7 +4,7 @@ const server = express()
 const mongoose = require('mongoose')
 
 
-mongoose.connect(process.env.MONGO_URL, {
+mongoose.connect('geonosis.mongodb.umbler.com:35319', {
     useCreateIndex: true,
     useNewUrlParser:true,
     useUnifiedTopology: true
